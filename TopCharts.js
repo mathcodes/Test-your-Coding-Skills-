@@ -34,7 +34,7 @@ var questionIndex = 0;
 
 // Start working code cur
 // Declared variables
-var curTime = document.querySelector("#curTime");
+var currentTime = document.querySelector("#currentTime");
 var timer = document.querySelector("#beginTime");
 var questionsDiv = document.querySelector("#questionsDiv");
 var wrapper = document.querySelector("#wrapper");
@@ -54,12 +54,12 @@ timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            curTime.textContent = "Time: " + secondsLeft;
+            currentTime.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                curTime.textContent = "Time's up!";
+                currentTime.textContent = "Time's up!";
             }
         }, 1000);
     }
@@ -123,7 +123,7 @@ function compare(event) {
 // All done will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
-    curTime.innerHTML = "";
+    currentTime.innerHTML = "";
 
     // Heading:
     var createH1 = document.createElement("h1");
